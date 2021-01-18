@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      
+      * {
+        box-sizing: border-box;
+      }
+
+      li {
+        margin:20px;
+        font-size:20px;
+      }
+      
+      .left {
+        width: 300px;
+        float: left;
+      }
+ 
+      input {
+        width: 400px;
+        float: right;
+        transform: rotate(90deg);
+        margin: 200px -180px;
+
+        -webkit-appearance: none;
+        outline: none;
+        background: #d3d3d3;
+
+        height: 20px;
+        border-radius: 10px;  
+      }
+
+      input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #4CAF50;
+        cursor: pointer;
+      }
+
+        
+    </style>
+
+  </head>
+
+
+
+<body>
+
+<div>
+  <div class="left" style="background:lightblue">
+  <ul>
+    <li>--Sun--</li>
+    <li><a href="urlMercury">Mercury</a></li>
+    <li>Venus</li>
+    <li>Earth</li>
+    <li>Mars</li>
+    <li>Jupiter</li>
+    <li>Saturn</li>
+    <li>Uranus</li>
+    <li>Neptune</li>
+    <li>(Pluto)</li>
+  </ul>
+  </div>
+
+  <input type="range" min="380" max="750" value="5" step="1" id="myRange1">
+
+  <input type="range" min="1" max="100000000000000" value="5" step="1" id="myRange2">
+
+</div>
+
+
+<div>
+  <p><span id="demo"></span> nanometers</p>
+</div>
+    
+
+
+
+
+
+ <script>
+    var slider = document.getElementById("myRange1");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+  </script>
+  
+</body>
+
+
+</html>
